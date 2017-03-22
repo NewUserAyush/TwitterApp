@@ -1,0 +1,25 @@
+<ion-side-menus enable-menu-with-back-views="true">
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <!--<ion-nav-back-button></ion-nav-back-button>-->
+
+      <ion-nav-buttons side="left">
+        <button ng-click="connectButton();myhome()" ng-if="!connectedTwitter" id="connectButton" type="button" class="btn btn-primary">Connect Twitter</button>
+        <button ng-click="signOut()" id="signOut" type="button" class="btn btn-info" style="display:none;">Sign Out</button>
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <!--<button ng-href="#/app/tweet" class="button-icon ion-navicon">tweet</button>-->
+        <button ng-click="mynevigation()" class="button button-icon button-clear ion-social-twitter-outline"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+
+
+</ion-side-menus>
+
+

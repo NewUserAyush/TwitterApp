@@ -1,0 +1,31 @@
+
+<ion-view view-title="Playlists" >
+
+
+  <ion-content >
+    <ion-refresher
+      pulling-text="Pull to refresh..."
+      on-refresh="refresh()">
+    </ion-refresher>
+    <input type="search" placeholder="Search" style="margin-left:2%" ng-model="searchTerm">
+    <ion-list show-delete="shouldShowDelete" show-reorder="true" can-swipe="true" >
+      <ion-item ng-repeat="t in tweets | filter: searchTerm "  class="item card" >
+        <div class="item item-avatar">
+          <img ng-src="{{t.user.profile_image_url}}">
+          <h2>{{t.user.name}}</h2>
+        </div>
+        <div class="item item-body">
+          <img class="full-image" src="delorean.jpg">
+          <p><span ng-bind-html="t.text"></span></p>
+          <p>
+            <a href="#" class="subdued">1 Like</a>
+            <a href="#" class="subdued">5 Comments</a>
+          </p>
+        </div>
+        <ion-option-button class="button-positive" ng-click="share(item)">Share</ion-option-button>
+        <ion-option-button class="button-info" ng-click="edit(item)">Edit</ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
